@@ -1,0 +1,80 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden
+}
+
+body {
+  font-family: 'Poppins', sans-serif!important;
+}
+
+select,
+input {
+  font-size: large;
+}
+
+a {
+  color: blue;
+}
+
+.box {
+  display: inline-block;
+  margin: 10px;
+  border-radius: 3px;
+  text-align: center;
+  width: 195px;
+}
+
+.box:hover {
+  box-shadow: 2px 4px 3px grey;
+  cursor: pointer;
+}
+
+.mat-dialog-container {
+  background-color: rgb(219, 226, 239)!important;
+}
+
+/* scroll bar styling */
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(150, 145, 145);
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(129, 123, 123);
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 12px;
+  background-color: rgb(129, 123, 123);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: rgb(150, 145, 145);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: rgb(129, 123, 123);
+}
+
+// for custom pipe: 
+.highlight {
+  background-color: violet;
+  font-weight: bold;
+}

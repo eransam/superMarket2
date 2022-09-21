@@ -1,0 +1,30 @@
+@import '../../../styles/variables/variables.scss';
+
+.image-size {
+   height: 170px;
+}
+
+.mat-card-title {
+   font-size: 16px!important;
+}
+
+.mat-card {
+   background: $shopping-white;
+    box-shadow: none;
+}
+
+.mat-card-header {
+   display: inline-block!important;
+}
+
+.add-btn, .edit-btn {
+   background-color: $shopping-dark-blue;
+   color: $shopping-white;
+}
+
+.overflow {
+      width: 124px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}

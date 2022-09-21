@@ -1,0 +1,19 @@
+img {
+    width: 50%;
+}
+
+.welcome-header {
+    font-weight: 700;
+    font-size: 42px;
+}
+
+.welcome-small-header {
+    font-size: 19px;
+}
+
+@media only screen and (max-width:800px) {
+    .welcome-header {
+        font-weight: 700;
+        font-size: 25px;
+    }
+}

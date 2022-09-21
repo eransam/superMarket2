@@ -1,0 +1,47 @@
+@import '../../../styles/placeholders/placeholders.scss';
+@import '../../../styles/variables/variables.scss';
+
+div {
+    height: 100%;
+    position: relative;
+    color: $shopping-white;
+}
+
+.shopping-header-1 {
+    font-size: 36px;
+    padding-top: 30px;
+    left: 134px;
+    position: absolute;
+}
+
+.shopping-header-2 {
+    font-size: 13px;
+    padding-top: 38px;
+    left: 408px;
+    position: absolute;
+}
+
+
+app-search {
+    position: absolute;
+    left: 544px;
+    top: 12px;
+}
+
+::ng-deep .header-container .mat-input-element::placeholder{
+    color: $shopping-white;
+}
+
+@media only screen and (max-width:700px) {
+    .shopping-header-1 {
+        font-size: 25px;
+        padding-top: 48px;
+        left: 85px;
+    }
+
+    .shopping-header-2 {
+        left: 276px;
+        position: absolute;
+        bottom: 8px;
+    }
+}

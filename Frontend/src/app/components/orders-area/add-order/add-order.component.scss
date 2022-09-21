@@ -1,0 +1,46 @@
+@import '../../../styles/variables/variables.scss';
+
+input, select {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: $input-font-size;
+}
+
+mat-hint:not(.old-color):not(.populate-info) {
+    color: red;
+}
+
+.populate-info {
+    font-size: smaller;
+}
+
+.add-order-btn {
+    background-color: $shopping-orange;
+    color: $shopping-white;
+    width: 100%;
+    margin-top: 19px;
+}
+
+.add-order-btn:hover {
+    cursor: pointer;
+}
+
+.mat-form-field {
+    display: block!important;
+}
+
+
+@media only screen and (max-width:950px) {
+
+    mat-form-field,
+    .add-order-btn {
+        width: 256px;
+    }
+}
+
+@media only screen and (max-width:615px) {
+    .add-order-btn {
+        margin-bottom: 18px;
+    }
+
+}

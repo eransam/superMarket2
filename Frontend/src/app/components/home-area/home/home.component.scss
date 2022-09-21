@@ -1,0 +1,157 @@
+@import '../../../styles/placeholders/placeholders.scss';
+// css adapted from: 
+// https://www.sliderrevolution.com/resources/css-animated-background/
+
+.home-page-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+app-login {
+    z-index: 1;
+}
+
+.cater-movingBG {
+    height: 100%;
+    background-image: url(/assets/images/shopping-bags.jpg);
+    // background-size: 125%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: animatedBackground 10s linear alternate infinite;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-attachment: fixed;
+}
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 50% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.flyinTxtCont {
+    margin-left: 13px;
+}
+
+.flyIn {
+    color: #fff;
+    position: relative;
+    text-shadow: 2px 2px 40px rgba(0, 0, 0, 0.7);
+    // width: 708px;
+    width: 408px;
+    background: rgba(0, 0, 0, 0.6);
+    padding-left: 19px;
+    padding-top: 19px;
+    border-radius: 3px;
+}
+
+.lineOne {
+    transition-delay: .6s;
+    transition: .1s ease-out;
+    animation: txtFlyIn .6s linear;
+}
+
+.lineTwo {
+    transition-delay: .8s;
+    transition: .6s ease in;
+    animation: txtFlyIn .6s linear;
+}
+
+.lineThree {
+    transition-delay: .10s;
+    transition: .8s ease in;
+    animation: txtFlyIn .9s linear;
+}
+
+.lineFour {
+    transition-delay: 2s;
+    transition: 2s ease in;
+    animation: fadeIn 2s linear;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+    color: #000;
+    box-sizing: border-box;
+    max-width: 63%;
+    max-width: 22em;
+    font-size: 32px;
+    padding: .2em .5em;
+    margin-top: 30px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes txtFlyIn {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+
+@media only screen and (max-width:800px) {
+    .cater-movingBG {
+        flex-direction: column;
+        // width: 359px;
+        // width: 638px;
+        // width: fit-content;
+        // width: max-content;
+        width: auto;
+
+
+
+
+
+        // height: 100%;
+        height: 150%;
+    
+    }
+    .flyIn {
+        // color: #fff;
+        // position: relative;
+        // text-shadow: 2px 2px 40px rgba(0, 0, 0, 0.7);
+        width: 320px;
+        // background: rgba(0, 0, 0, 0.6);
+        // padding-left: 19px;
+        padding-top: 0px;
+        // border-radius: 3px;
+    }
+}
+
+
+@media only screen and (min-width:1100px) {
+
+    .flyIn {
+        // color: #fff;
+        // position: relative;
+        // text-shadow: 2px 2px 40px rgba(0, 0, 0, 0.7);
+        width: 708px;
+        // background: rgba(0, 0, 0, 0.6);
+        // padding-left: 19px;
+        // padding-top: 0px;
+        // border-radius: 3px;
+    }
+}

@@ -1,0 +1,41 @@
+img {
+    width: 112px;
+    height: 81px;
+    border-radius: 3px;
+}
+
+div>div:last-child {
+    margin-left: auto;
+}
+
+.delete {
+    cursor: pointer;
+    height: 21px;
+    width: 21px;
+}
+
+.item-cart {
+    width: 100%;
+    border-bottom: 1px solid rgb(230, 221, 221);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.item-image {
+    display: inline-block;
+}
+
+.item-desc {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.item-actions {
+    float: right;
+    margin: 6px;
+}
+
+.item-name {
+    font-size: 20px;
+}

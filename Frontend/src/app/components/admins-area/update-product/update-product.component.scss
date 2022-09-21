@@ -1,0 +1,51 @@
+@import '../../../styles/variables/variables.scss';
+form {
+    padding: 0px 20px 0px 20px;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: $input-font-size;
+}
+
+button {
+    width: 100%;
+}
+
+mat-hint {
+    color: red;
+}
+
+// https://stackoverflow.com/questions/52622061/how-to-use-input-type-file-in-angular-material
+.file-name {
+    color: grey;
+}
+
+.hide-hint {
+    display: none;
+}
+
+.edit-order-btn {
+    background-color: $shopping-orange;
+    color: $shopping-white;
+    width: 100%;
+    margin-top: 19px;
+}
+
+.edit-order-btn:hover {
+    cursor: pointer;
+}
+
+.mat-form-field {
+    display: block!important;
+}
+
+.choose-file-btn {
+    background-color: transparent;
+    border: 1px solid;
+}

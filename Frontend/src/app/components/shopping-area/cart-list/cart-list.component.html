@@ -1,0 +1,41 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+        <div class="shopping-cart-container">
+            <div class="no-items" *ngIf="allItemsByCart?.length === 0">
+                No Items
+            </div>
+            <div class="shopping-cart-header">
+                <h2 class="cart-header">Shopping Cart ({{allItemsByCart?.length}})</h2>
+                <div *ngIf="allItemsByCart?.length !== 0" mat-raised-button class="delete-all empty-cart"
+                    (click)="deleteAllItems()">Empty Cart</div>
+            </div>
+            <div class="shopping-cart-content">
+                <app-sidenav-details [fromShopPage]="isShoppingPage" *ngFor="let i of allItemsByCart" [item]="i"
+                    (deleteItem)="deleteThisCard($event)"></app-sidenav-details>
+            </div>
+            <div class="shopping-cart-footer">
+                <div *ngIf="totalAmount && allItemsByCart?.length !== 0">
+                    <div class="total-header">Total</div>
+                    <div class="total-amount">{{totalAmount | currency: "USD"}}</div>
+                </div>
+                <div class="checkout-btn" *ngIf="allItemsByCart?.length !== 0" routerLink="/order">
+                    <mat-icon class="shopping-cart-icon">shopping_cart</mat-icon>Checkout
+                </div>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="side-bar-action-button" (click)="opened = !opened">
+            <div class="toggle-button">
+                <div class="cart-items-amount" *ngIf="allItemsByCart">{{allItemsByCart.length}}</div>
+                <img class="cart-side-image" src="/assets/images/logo.png">
+            </div>
+        </div>
+        <div class="category-style">
+            <app-category-list></app-category-list>
+        </div>
+        <div>
+            <app-product-list (addProductEmit)="addProduct($event)"></app-product-list>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

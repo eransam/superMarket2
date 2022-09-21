@@ -1,0 +1,12 @@
+@import '../../../styles/variables/variables.scss';
+
+.receipt {
+    display: inline-block;
+    color: $shopping-dark-blue;
+    text-decoration: underline;
+}
+
+.receipt:hover {
+    color: $shopping-orange;
+    cursor: pointer;
+}

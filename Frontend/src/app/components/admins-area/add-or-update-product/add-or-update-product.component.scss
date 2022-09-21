@@ -1,0 +1,23 @@
+@import '../../../styles/variables/variables.scss';
+
+.hideEditPanel {
+    display: block;
+}
+
+.go-to-add-product {
+    color: $shopping-dark-blue;
+    position: relative;
+    bottom: 7px;
+    text-decoration: auto;
+    float: right;
+    margin-top: 12px;
+    margin-right: 21px;
+    background-color: $shopping-dark-blue;
+    color: $shopping-white;
+}
+
+.go-to-add-product:hover {
+    background-color: rgba(17, 45, 77, 0.6);
+    text-decoration: underline;
+    cursor: pointer;
+}

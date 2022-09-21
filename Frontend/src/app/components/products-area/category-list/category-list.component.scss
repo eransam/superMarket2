@@ -1,0 +1,44 @@
+@import '../../../styles/variables/variables.scss';
+
+.tab-item {
+    margin: 3px;
+    padding: 4px 11px 3px 4px;
+    width: fit-content;
+    float: left;
+    border-right: 1px solid lightgray;
+}
+
+.tab-item:hover {
+   cursor: pointer;
+   text-decoration: underline;
+}
+
+::ng-deep .mat-tab-label, ::ng-deep .mat-tab-label-content {
+    min-width: 0px!important;
+    padding-left: 7px!important;
+    padding-right: 7px!important;
+    min-width: 112px!important;
+    white-space: break-spaces!important;
+    color: $shopping-dark-blue!important;
+}
+
+::ng-deep .mat-tab-label:hover {
+    background-color:  rgba(17, 45, 78, 0.1)!important;
+}
+
+::ng-deep .mat-tab-label-active {
+    background-color: rgba(17, 45, 78, 0.1)!important;
+}
+
+::ng-deep .mat-tab-disabled {
+    background-color:  rgba(0,0,0,.2)!important;
+}
+
+::ng-deep .mat-tab-disabled .mat-tab-label-content{
+    color: #676464!important;
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: $shopping-dark-blue!important;
+}
+
