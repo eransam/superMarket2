@@ -1,3 +1,4 @@
+//כאן אנו יוצרים אינטרפייס אשר מכיל את הערכים הללו
 enum CityEnum {
     LosAngeles = "Los Angeles",
     Manhattan = "Manhattan",

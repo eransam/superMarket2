@@ -7,9 +7,10 @@ async function connect(): Promise<void> {
         console.log("We're connected to MongoDB " + db.connections[0].name);
 
     } catch (err: any) {
-        console.log(err) // if there is no connection then nothing will work anyways.
+        console.log(err)
     }
 }
+
 
 export default {
     connect

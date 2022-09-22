@@ -2,23 +2,32 @@ import { UploadedFile } from "express-fileupload";
 import { Document, model, Schema } from "mongoose";
 import { CategoryModel } from "./category-model";
 
-//1. Model interface describing the data in the model:
+//אינטרפייס ושדות
 export interface IProductModel extends Document {
     name: string
     price: number
     imageName: string
+
+    //שדה המכיל קובץ
     image: UploadedFile
-     categoryId: Schema.Types.ObjectId
+
+    //שדה אשר מקבל ערך משדה של מודל חיצוני
+    categoryId: Schema.Types.ObjectId
 }
 
-//2. Model Schema describing validation, constraints and more:
+//סכמת ולידציה
 const ProductSchema = new Schema<IProductModel>({
     name: {
         type: String,
         required: [true, "Missing name"],
         minlength: [2, "Name too short"],
         maxlength: [100, "Name too long"],
+        
+        //מוחק רווחים ושדות מיותרים
         trim: true,
+
+        //פקודה זו גורמת לערך המוזן בשדה זה להיות ייחודי בדאטה בייס
+        //זאת אומרת שלא יוכל להיות אובייקט אחר עם שם זהה לשם אובייקט שכבר קיים במערכת 
         unique: true
 
     },
@@ -38,12 +47,19 @@ const ProductSchema = new Schema<IProductModel>({
     categoryId: Schema.Types.ObjectId
 
 }, {
+
+    //מייצר שדה גירסה בדאטה בייס
     versionKey: false,
+
+    //cart-item-model הסבר ב 
     toJSON: { virtuals: true },
+
+    //id: false // Don't duplicate _id into id field
+    //לא נקבל באופן אוטומטי עוד שדה של איידי
     id: false
 })
 
-//Virtual Fields: 
+//cart-item-model הסבר ב 
 ProductSchema.virtual('category', {
     ref: CategoryModel,
     localField: 'categoryId',
@@ -52,6 +68,6 @@ ProductSchema.virtual('category', {
 
 })
 
-//3. Model Class - this is the final model class:
+//cart-item-model הסבר ב 
 export const ProductModel = model<IProductModel>('ProductModel', ProductSchema, 'products')
 

@@ -1,11 +1,10 @@
 import { Document, model, Schema } from "mongoose";
 
-//1. Interface describing category:
 export interface ICategoryModel extends Document {
     name: string
 }
 
-//2. Schema describing category:
+//סכמת ולידציה
 const CategorySchema = new Schema<ICategoryModel>({
     name: {
         type: String,
@@ -16,8 +15,11 @@ const CategorySchema = new Schema<ICategoryModel>({
         unique: true
     }
 }, {
+
+    //versionKey: false, // Don't create __v field for versioning
+    //מייצר שדה גירסה בדאטה בייס
     versionKey: false
 })
 
-// 3. Category Model:
+// //cart-item-model הסבר ב 
 export const CategoryModel = model<ICategoryModel>('CategoryModel', CategorySchema, 'categories')

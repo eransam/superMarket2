@@ -1,7 +1,7 @@
 import { Document, model, Schema } from "mongoose";
 
 
-//1. Model interface describing the data in the model:
+//אינטרפייס עם שדות
 export interface ICredentialsModel extends Document {
 
     username: string
@@ -9,7 +9,7 @@ export interface ICredentialsModel extends Document {
 
 }
 
-//2. Model Schema describing validation, constraints and more:
+//שכמת ולידציה
 const CredentialsSchema = new Schema<ICredentialsModel>({
 
     username: {
@@ -18,7 +18,10 @@ const CredentialsSchema = new Schema<ICredentialsModel>({
         required: [true, "Missing username"],
         minlength: [2, "Username too short"],
         maxlength: [100, "Username too long"],
+
+        //מוחק רווחים לא רצויים וכאלה
         trim: true,
+
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "You have entered an invalid email address"]
     },
     password: {
@@ -29,9 +32,11 @@ const CredentialsSchema = new Schema<ICredentialsModel>({
         trim: true,
     }
 }, {
+
+    //מייצר שדה גירסה בדאטה בייס
     versionKey: false,
 })
 
 
-//3. Model Class - this is the final model class:
+//cart-item-model הסבר ב 
 export const CredentialsModel = model<ICredentialsModel>('CredentialsModel', CredentialsSchema, 'users')
