@@ -6,36 +6,45 @@ import path from "path"
 import safeDelete from "../01-utils/safe-delete"
 
 
-//Get all Categories
-//המקושרים באובייקטים הנמצאים  ProductModel כך אנו נזמן את על האובייקטים הנמתאים בתוך הקולקשיין הנמצא ב
-//(.populate('category')) category בקולקשיין 
+
+//פונ אשר מחזירה את כל האובייקטים הנמצאים תחת הקולקשיין המבוקש ובגלל שבאובייקטים אלו 
+//.populate יש גם פרופרטי שמקבלים ערך ממודלים אחרים אנו נשתנש בפונ ה
 async function getAllProducts(): Promise<IProductModel[]> {
     return ProductModel.find().populate('category').exec()
 }
 
-//Count products
 //ProductModel פונ' אשר סופרת את כמות האובייקטים בקולקשיין הנמצא תחת 
+//.count בעזרת הפונ המובנת 
 async function countProducts(): Promise<number> {
     return ProductModel.find().count().exec()
 }
 
-//This function will be used later to get old imageName for updating product 
-// _id פונק אשר מקבלת כפרמטר 
+//פונ אשר מחזירה תמונה של מוצר ישן כדי לעדכן את המוצר החדש עם אותה תמונה 
 async function getOneProduct(_id: string): Promise<IProductModel> {
+
     //שהוכנס כפרמטר אנו מוצאים את האובייקט המבוקש ומכניסים אותו למשתנה שלנו  _id כאן אנו יוצרים משתנה ובעזרת ה
     const product = await ProductModel.findById(_id).populate('category').exec()
+    
     // במידה ואין אובייקט עם ערך איידי כזה אנו נחזיר שגיאה
     if (!product) throw new ErrorModel(404, `Resource with _id ${_id} not found.`)
+    
     // במידה ויש אובייקט כזה אנו נחזיר אותו
     return product
 }
 
-//Get all Categories
+
+
+
+//CategoryModel פונ אשר מחזירה את כל האובייקטים הנמצאים בקולקשין שבתוך המודל 
 async function getAllCategories(): Promise<ICategoryModel[]> {
     return CategoryModel.find().exec()
 }
 
-// Add product 
+
+
+
+
+//פונ אשר מוסיפה מוצר
 //מקבלים אובייקט במודל "פרודקט" ועושים עליו ולידציה
 async function addProduct(product: IProductModel): Promise<IProductModel> {
     const errors = product.validateSync()
@@ -66,9 +75,6 @@ async function addProduct(product: IProductModel): Promise<IProductModel> {
 
 
 
-
-
-
 //Update product
 // פונ' שמקבלת אובייקט מסוג פרודקט-מודל
 async function updateProduct(product: IProductModel): Promise<IProductModel> {
@@ -93,10 +99,6 @@ async function updateProduct(product: IProductModel): Promise<IProductModel> {
         product.image = undefined
     }
 
-
-
-
-    
     // ProductModel על אובייקט מסוג findByIdAndUpdate כאן אנו יוצרים משתנה ומחילים את הפונ ' ה
     //ולאחר מכן אנו product._id ופונ' זו לוקחת את האובייקט שאותו אנו רוצים לעדכן בעזרת האיידי שלו כך 
     //וכך האובייקט המעודכן יחליף את האובייקט המקורי בדאטה בייס product נציב את האובייקט המעודכן 
@@ -104,6 +106,10 @@ async function updateProduct(product: IProductModel): Promise<IProductModel> {
     if (!updatedProduct) throw new ErrorModel(404, `Resource with _id ${product._id} not found.`)
     return updatedProduct
 }
+
+
+
+
 
 export default {
     getAllProducts,
