@@ -5,7 +5,7 @@
     height: 100%;
     box-sizing: border-box;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 15% 80% 5%;
+    grid-template-rows: max-content max-content max-content;
     background-color: rgb(219, 226, 239);
 }
 

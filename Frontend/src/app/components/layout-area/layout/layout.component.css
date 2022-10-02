@@ -7,10 +7,10 @@
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -ms-grid-columns: (1fr)[6];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(6, 1fr);
-  -ms-grid-rows: 15% 80% 5%;
-      grid-template-rows: 15% 80% 5%;
+  -ms-grid-rows: 15% 60% 25%;
+grid-template-rows: 15% 60% max-content;
   background-color: #dbe2ef;
 }
 
