@@ -32,7 +32,7 @@ a {
 }
 
 .mat-dialog-container {
-  background-color: rgb(219, 226, 239)!important;
+  background-color:white !important;
 }
 
 /* scroll bar styling */
@@ -42,7 +42,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: lightgrey;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -98,3 +98,106 @@ body {
     margin: 23px;
 }
 
+div[_ngcontent-mig-c196] {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 1;
+    right: 41px;
+}
+
+body {
+    height: 100%;
+    background-color: white;
+}
+
+
+.footer[_ngcontent-wib-c199] {
+    background-color: #24262b;
+    padding: 20px 0;
+    height: 310px;
+}
+
+
+header[_ngcontent-cyj-c200], footer[_ngcontent-cyj-c200] {
+    grid-column: span 6;
+    height: 300px;
+   
+}
+
+
+header[_ngcontent-hpt-c198] {
+    width: 100vw;
+    height: 100px;
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+    font-family: "Poppins";
+    background-color: white;
+}
+
+
+.mat-card-header-text {
+    margin: 0 0px !important;
+    margin-right: -110px !important;
+}
+
+
+.mat-drawer-transition .mat-drawer-content {
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-property: transform,margin-left,margin-right;
+    background-color: white;
+}
+
+header {
+    height: 100px;
+
+}
+
+.menu2{
+    margin-bottom: 18px;
+}
+
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    padding: 0px !important;
+    border-radius: 4px;
+}
+
+.mat-card-actions {
+    margin-left: -8px;
+    margin-right: 18px !important;
+    padding: 8px 0;
+}
+
+.mat-card-content {
+    font-size: 14px;
+    margin-right: 19px !important;
+}
+
+
+.mat-card-image {
+    width: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+    margin-bottom: 23px !important;
+}
+
+
+app-search[_ngcontent-yff-c198] {
+    position: absolute;
+    left: 392px;
+    top: 12px;
+    width: 880px !important;
+}
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 721px !important;
+    padding-top: 9px !important;
+}

@@ -4,8 +4,12 @@
    height: 170px;
 }
 
+p{
+    text-align: right;
+}
 .mat-card-title {
    font-size: 16px!important;
+   text-align: right;
 }
 
 .mat-card {
@@ -15,10 +19,11 @@
 
 .mat-card-header {
    display: inline-block!important;
+   color: #D51C4A;
 }
 
 .add-btn, .edit-btn {
-   background-color: $shopping-dark-blue;
+   background-color: #D51C4A;
    color: $shopping-white;
 }
 
@@ -27,4 +32,21 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+}
+
+.tokef{
+    background-color: grey;
+    height: 34px;
+}
+
+.box2{
+    display: inline-block;
+    margin: 2px;
+    border-radius: 1px;
+    text-align: center;
+    width: 273px;
+    height: 369px;
+    border: solid 1px grey;
+    margin-bottom: 19px;
+    padding-top: 16px;
 }

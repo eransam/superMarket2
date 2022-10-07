@@ -42,3 +42,16 @@
     background-color: $shopping-dark-blue!important;
 }
 
+
+.menu2{
+    padding-right: 0;
+    height: 60px;
+    width: -webkit-fill-available;
+    min-width: -webkit-fill-available;
+    width: -moz-available;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background: #f1f6ff;
+    z-index: 999;
+}
