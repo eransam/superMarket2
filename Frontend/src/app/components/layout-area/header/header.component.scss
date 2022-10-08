@@ -26,6 +26,7 @@ app-search {
     position: absolute;
     left: 544px;
     top: 12px;
+    z-index: 5;
 }
 
 ::ng-deep .header-container .mat-input-element::placeholder{
