@@ -1,6 +1,12 @@
 <div class="menu2">
+
+<!--תגית של טאבים mat-tab-group -->
 <mat-tab-group animationDuration="0ms" (selectedIndexChange)="selectCategoryByIndex($event)">
+
+    <!-- כאן אנו יוצרים טאב שבתוכו אנו נציג את כל המוצרים  -->
     <mat-tab [label]="'All'">{{products}}</mat-tab>
+
+    <!--  -->
     <mat-tab [disabled]="searchText !== ''" *ngFor="let c of categories; let i =index," [label]="c.name">{{products}}</mat-tab>
   </mat-tab-group>
   </div>

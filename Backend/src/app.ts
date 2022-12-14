@@ -19,6 +19,7 @@ import logRequests from './02-middleware/log-requests'
 import sanitize from './02-middleware/sanitize'
 import productsController from './06-controllers/products-controller'
 import imagesController from './06-controllers/images-controller'
+import cateController from './06-controllers/cate-controller'
 import cartsController from './06-controllers/carts-controller'
 import cartItemsController from './06-controllers/cart-items-controller'
 import ordersController from './06-controllers/orders-controller'
@@ -51,6 +52,8 @@ server.use('/', imagesController)
 server.use('/api', cartsController)
 server.use('/api', cartItemsController)
 server.use('/api', ordersController)
+server.use('/api', cateController)
+
 server.use('/api/auth', authController)
 
 

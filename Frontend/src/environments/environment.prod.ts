@@ -24,4 +24,7 @@ export const environment = {
     //  orders: 
     ordersUrl: 'http://localhost:3001/api/orders/',
     ordersCountUrl:'http://localhost:3001/api/orders-count/',
+
+      // cate: 
+  cateUrl: 'http://localhost:3001/api/cate/',
 };

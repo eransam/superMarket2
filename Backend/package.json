@@ -9,7 +9,7 @@
     "build": "tsc"
   },
   "keywords": [],
-  "author": "Jack Amsterdam",
+  "author": "eran samimian",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.13",

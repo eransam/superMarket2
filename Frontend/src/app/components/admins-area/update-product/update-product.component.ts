@@ -26,9 +26,10 @@ export class UpdateProductComponent implements OnInit {
   priceInput: FormControl
   categoryIdInput: FormControl
   imageInput: FormControl
-
   @ViewChild('imageBox')
   imageBoxRef: ElementRef<HTMLInputElement>
+
+  
 
 
 
@@ -43,7 +44,8 @@ export class UpdateProductComponent implements OnInit {
 
   async ngOnInit() {
     try {
-
+    console.log("imageInput: " , this.imageInput);
+        
       this.nameInput = new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(100), this.isUnique()])
       this.priceInput = new FormControl('', [Validators.required, Validators.min(0), Validators.max(1000)])
       this.categoryIdInput = new FormControl('', [Validators.required])

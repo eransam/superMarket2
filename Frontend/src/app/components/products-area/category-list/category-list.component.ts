@@ -13,26 +13,40 @@ import { MatTabGroup } from '@angular/material/tabs';
   styleUrls: ['./category-list.component.scss']
 })
 export class CategoryListComponent implements OnInit, OnDestroy {
+
+// יוצאים משתנים 
   categories: CategoryModel[]
   products: ProductModel[]
-  unsubscribe: Unsubscribe
   searchText = ''
 
-  constructor(private productsService: ProductsService, private notify: NotifyService) { }
+//   משתנה מסוג פונקציה כדי שלשם אנו נכניס את האזנה לשינויים שלנו ונעשה את הפעולה הזו בתוך המשתנה הזה כדי שנוכל
+// בעת הריסת הקומפוננטה גם לבטל את האזנה לשינויים
+  unsubscribe: Unsubscribe
 
+
+
+  constructor(private productsService: ProductsService, private notify: NotifyService) { }
+// תופס אלמנטים מהדום @ViewChild 
+//tabGroup ומכניס אותם למשתנה 
   @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
 
+//  כל הפקודות שבתוך יקרו בעת טעינת הקומפוננטה  =  ngOnInit
   async ngOnInit() {
 
     try {
-
+// טוענים לוך משתנה זה את כל האובייקטיהקטגוריות הנמצאים בתוך הדאטה בייס
       this.categories = await this.productsService.getAllCategories()
 
+    // פקודה זו של הסטור אומרת לנו בעצם שבכל שינוי אשר קורא בסטור התבצעו הפקודות שבתוכה  store.subscribe
       this.unsubscribe = store.subscribe(() => {
+
+        //searchText שזה אומר שיוכנס ערך חדש ישר מהסטור לתוך המשתנה 
         this.searchText = store.getState().productsState.searchText;
 
+        
         if (this.searchText !== '') {
-          // select "All" category
+          //מביא את כל הקטגוריות בלי סינון
+          //.selectedIndex = 0 בעזרת הפקודה 
           this.tabGroup.selectedIndex = 0
         }
       })
@@ -46,17 +60,22 @@ export class CategoryListComponent implements OnInit, OnDestroy {
 
   async selectCategoryByIndex(index: number) {
     try {
+
+        // במידה ויכנס כארגומנט 0 יוצגו כל הקטגוריות
       if (index === 0) {
         this.productsService.setSelectedCategory('all')
+
+        // כך תוצג רק קטגןריה נבחרת ע'יי כך שיכניסו בפונ הראשית את האינדקס של אותה קטגוריה
       } else {
-        //Instead of going to the backend I am more efficient displaying products based on category ID saved to redux and subscribed in the component
         this.productsService.setSelectedCategory(this.categories[index - 1]._id)
       }
+
     } catch (err: any) {
       this.notify.error(err)
     }
   }
 
+  //בהריסת הקומפוננטה אנו נהרוס את המשתנה אשר מכיל את ההאזנה לשינויים
   ngOnDestroy(): void {
     if (this.unsubscribe) {
       this.unsubscribe()

@@ -13,6 +13,10 @@ export const environment = {
   // categories: 
   categoriesUrl: 'http://localhost:3001/api/categories/',
 
+
+  // cate: 
+  cateUrl: 'http://localhost:3001/api/cate/',
+
   // products: 
   productsUrl: 'http://localhost:3001/api/products/',
   productsImageUrl: 'http://localhost:3001/shopping/images/',
