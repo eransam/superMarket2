@@ -27,3 +27,15 @@ div {
     display: none;
   }
 }
+
+.mat-icon {
+    -webkit-user-select: none;
+    user-select: none;
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    color: black !important;
+    width: 24px;
+}
+

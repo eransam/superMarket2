@@ -11,11 +11,12 @@
 
 app-login {
     z-index: 1;
+    padding: 45px;
 }
 
 .cater-movingBG {
     height: 100%;
-    background-image: url(/assets/images/shopping-bags.jpg);
+    background-image: url(/assets/images/vetchebels.jpg);
     // background-size: 125%;
     background-size: cover;
     background-repeat: repeat-x;
@@ -154,4 +155,9 @@ app-login {
         // padding-top: 0px;
         // border-radius: 3px;
     }
+
+
+
+
 }
+

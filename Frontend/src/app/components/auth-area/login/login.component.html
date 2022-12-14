@@ -1,6 +1,5 @@
 <div class="login-box" *ngIf="!user">
     <form (ngSubmit)="submit()" #formBox="ngForm">
-        
         <mat-form-field floatLabel="always" appearance="fill">
             <mat-label>Email: </mat-label>
             <input matInput autofocus type="email" name="username" [(ngModel)]="credentials.username" placeholder="email" #usernameBox="ngModel" required minlength="2" maxlength="100" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
