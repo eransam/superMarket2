@@ -29,7 +29,7 @@ export class PdfReceiptComponent {
     let docDefinition = {
       content: [
         {
-          text: "Jack Amsterdam's Virtual Supermarket",
+          text: "eran samimian Virtual Supermarket",
           fontSize: 16,
           alignment: 'center',
           color: '#047886'
@@ -115,21 +115,21 @@ export class PdfReceiptComponent {
         {
           margin: [0, 0, 0, 15],
           ul: [
-            { text: 'Linkedin', color: 'blue', link: 'https://www.linkedin.com/in/jack-amsterdam/' },
+            { text: 'Linkedin', color: 'blue', link: 'https://www.linkedin.com/in/eransam/' },
 
-            { text: 'Github', color: 'blue', link: 'https://github.com/jackamsterdam' },
+            { text: 'Github', color: 'blue', link: 'https://github.com/eransam/' },
 
-            { text: 'WakaTime', color: 'blue', link: 'https://wakatime.com/@jackamsterdam' },
+            { text: 'WakaTime', color: 'blue', link: 'https://wakatime.com/@eransam/' },
 
-            { text: 'NPM', color: 'blue', link: 'https://www.npmjs.com/~jackamsterdam' },
+            { text: 'NPM', color: 'blue', link: 'https://www.npmjs.com/~eransam/' },
 
-            { text: 'Docker Hub', color: 'blue', link: 'https://hub.docker.com/u/jackamsterdam' }
+            { text: 'Docker Hub', color: 'blue', link: 'https://hub.docker.com/u/jeransam/' }
           ],
         },
         {
           columns: [
-            [{ qr: `https://www.linkedin.com/in/jack-amsterdam/`, fit: '100' }],
-            [{ qr: `https://github.com/jackamsterdam`, alignment: 'right', fit: '98' }],
+            [{ qr: `https://www.linkedin.com/in/eransam/`, fit: '100' }],
+            [{ qr: `https://github.com/eransam/`, alignment: 'right', fit: '98' }],
           ]
         },
         {

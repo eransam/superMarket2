@@ -23,8 +23,6 @@ const CartSchema = new Schema<ICartModel>({
 
     //false כאן אנו קובעים שהערך הדיפולטיבי של שדה זה הוא 
     isClosed: {
-        type: Boolean,
-        default: false
     }
 
 }, {

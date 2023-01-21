@@ -6,7 +6,6 @@ export class ProductModel {
     price: number
     imageName: string
     image: File
-
     categoryId: string
     category: CategoryModel
 }

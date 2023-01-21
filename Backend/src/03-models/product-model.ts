@@ -7,10 +7,8 @@ export interface IProductModel extends Document {
     name: string
     price: number
     imageName: string
-
     //שדה המכיל קובץ
     image: UploadedFile
-
     //שדה אשר מקבל ערך משדה של מודל חיצוני
     categoryId: Schema.Types.ObjectId
 }
