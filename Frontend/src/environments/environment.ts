@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-
+  apiPath: window.location.protocol + '//' + window.location.host + '/',
   // auth: 
   emailAndSSNUniqueUrl: 'http://localhost:3001/api/auth/ssn-email-unique/',
   registerUrl: 'http://localhost:3001/api/auth/register/',
